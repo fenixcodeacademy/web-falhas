@@ -1,0 +1,21 @@
+CREATE TABLE usuario(
+
+    id integer PRIMARY KEY NOT NULL,
+    nome varchar(50),
+    email varchar(50),
+    endereco varchar(255),
+    complemento varchar(255),
+    senha varchar(255)
+
+);
+
+CREATE TABLE comentario(
+
+    id integer PRIMARY KEY NOT NULL,
+    id_usuario integer,
+    texto varchar(255),
+    CONSTRAINT fk_UsuarioComentario FOREIGN KEY (id_usuario) REFERENCES usuario (id)
+
+);
+
+INSERT INTO usuario (nome, email, endereco, complemento, senha) VALUES ('Usuário Laboratório', 'fenixcodeacademy@local.com', 'Rua John Doe, n° 8', 'Perto da Estação do Metro', '".MD5('fenixcodeacademy')."')

