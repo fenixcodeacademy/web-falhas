@@ -1,4 +1,4 @@
-<img src="https://fenixcodeacademy.com/img/wallpaper.png"/>
+<img src="https://fenixcodeacademy.com.br/img/wallpaper.png"/>
 
 [![Github Badge](https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white&link=https://github.com/gabrielvictorweb)](https://github.com/gabrielvictorweb)
 [![Youtube Badge](https://img.shields.io/badge/youtube-%23FF0000.svg?&style=for-the-badge&logo=youtube&logoColor=white&link=https://www.youtube.com/c/fenixcodeacademy)](https://www.youtube.com/c/fenixcodeacademy)
